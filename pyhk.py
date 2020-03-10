@@ -4,7 +4,7 @@
 # Copyright (C) 2011 Michael Schurpf
 # E-mail: michaelschuerpf AT gmail DOT com
 #
-# Extends pyhook to have normal hotkey functionality like autohotkey (AHK) scripts.
+# Extends pyWinhook to have normal hotkey functionality like autohotkey (AHK) scripts.
 # Hotkeys have to be entered in lists! Even if single items.
 # Hotkeys can be entered in ID list or human readble.
 # Example: human readble: ['Lcontrol','7'] for left CTRL 7.
@@ -43,11 +43,11 @@
 # You should have received a copy of the GNU General Public License
 # along with this program; if not, write to the Free Software
 # Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA
-import ctypes, PyHook3, pythoncom  #thread
+import ctypes, pyWinhook, pythoncom  #thread
 
 
 class pyhk:
-    """Hotkey class extending pyhook"""
+    """Hotkey class extending pyWinhook"""
 
     def __init__(self):
         # initiate internal hotkey list
@@ -67,7 +67,7 @@ class pyhk:
         # creat list for merged keys like Ctrl <= Lcontrol, Rcontrol
         self.KeyID2MEID = self.createMergeKeys()
         # create a hook manager
-        self.hm = PyHook3.HookManager()
+        self.hm = pyWinhook.HookManager()
         # watch for all keyboard events
         self.hm.KeyDown = self.OnKeyDown
         self.hm.KeyUp = self.OnKeyUp
