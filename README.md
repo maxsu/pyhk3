@@ -1,5 +1,5 @@
 # pyhk3
-There's another version of pyhk for Python 2 but I wanted this to be more up-to-date. Eventually, I want to use this with Selenium to make hotkey suites :)
+Forking to replace pyHook3 with pyWinhook because pyHook3 isn't up to date with the current python releases.
 
 
 Full credit for this project goes to: Schrupf
